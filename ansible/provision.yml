@@ -1,0 +1,30 @@
+---
+- name: "AWS - Install docker"
+  hosts: all
+  #remote_user: ec2-user
+  # key_file: {file("/root/key/terraform-key.pem")}
+  become: yes
+  tasks:
+  - name: Update all packages
+    ansible.builtin.yum:
+     name:
+        - python-pip
+        - yum-utils
+        - python3
+        - docker
+
+  - name: Enable Docker CE service at startup
+    service:
+      name: docker
+      state: started
+      enabled: yes
+
+  - name: Pull Nginx image and mount log folder to Nginx
+    shell: 
+      cmd: docker container run --rm --name my-nginx-1 -p80:80 -d -v /log:/usr/share/nginx/html nginx   #pull nginx imange and run it, map /log to default NGINX docker
+    
+  - name: Get Nginx status
+    shell:
+      cmd: sudo mkdir /log/
+      cmd: sudo chmod +x script.sh
+      cmd: sudo nohup ./script.sh &    #run script.sh in the background
