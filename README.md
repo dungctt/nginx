@@ -51,14 +51,12 @@ Observation:
 5) Verify Nginx
 6) Verify log
 7) Verify Tags
-
-# Terraform Destroy
-terraform destroy -auto-approve
-
-# Delete Files
-rm -rf .terraform*
-rm -rf terraform.tfstate*
 ```
+## Step-05: Execute Ansible Commands
+- Ansible workspace ./ansible/
+- Modify the /etc/ansible/hosts file with EC2 IP address
+- Ansible config file is in /etc/ansible/ansible.cfg
+- Run command ansible-playbook provision.yml
 
 
 
