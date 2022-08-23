@@ -1,6 +1,6 @@
 # Build a simple EC2 in custom VPC
 - In this assignment, I will build an EC2 which runs docker inside. The environment diagram is below
-
+https://github.com/dungctt/nginx/blob/main/assingment.png
 ## Step-01: Create VPC
 - Create VPC using `Terraform Modules`
 - Define `local values` and reference them in VPC Terraform Module
