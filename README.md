@@ -1,6 +1,7 @@
 # Build a simple EC2 in custom VPC
 - In this assignment, I will build an EC2 which runs docker inside. The environment diagram is below
 https://github.com/dungctt/nginx/blob/main/assingment.png
+
 ## Step-01: Create VPC
 - Create VPC using `Terraform Modules`
 - Define `local values` and reference them in VPC Terraform Module
@@ -51,6 +52,7 @@ Observation:
 5) Verify Nginx
 6) Verify log
 7) Verify Tags
+
 ```
 ## Step-05: Execute Ansible Commands
 - Ansible workspace ./ansible/
@@ -58,6 +60,11 @@ Observation:
 - Ansible config file is in /etc/ansible/ansible.cfg
 - Run command ansible-playbook provision.yml
 
-
-
-
+## Describe about my deployment
+- Things are done:
+  + Create VPC, subnet, secuirty group, EC2 by Terraform
+  + Install docker, flask, python by Ansible
+  + Run docker, get log by Ansible
+  + Mount log file to Nginx by Ansible
+- Things haven't finished yet: Write a REST API to search in log file.
+- We can improve these tasks by setup CI/CD and do automate deploy by CI/CD platform such as gitlab, Jenkin, etc.
