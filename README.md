@@ -54,7 +54,7 @@ Observation:
 7) Verify Tags
 
 ```
-## Step-05: Execute Ansible Commands
+## Step-05: Execute Ansible playbook to setup docker and get the log file.
 - Ansible workspace ./ansible/
 - Modify the /etc/ansible/hosts file with EC2 IP address
 - Ansible config file is in /etc/ansible/ansible.cfg
